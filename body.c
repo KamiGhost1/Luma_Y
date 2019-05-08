@@ -3,17 +3,17 @@
 
 int testParam(int C, char **V){
     if (C==1){
-        printf("YCbCr + by GHost\nenjoy!\n");
+        printf("lumaY by GHost\nenjoy!\n");
         exit(0);
     }
     if(C==3){
-        if (!strcmp(V[1],"y")){
+        if (!strcmp(V[1],"-y")){
             return 0;
         }
     }
     if(C==2){
         if(!strcmp(V[1],"-h")){
-            printf("help menu!\n");
+            printf("\thelp menu!\n\nuse command '-y':\nprog.exe -y image.bmp\n");
             exit(0);
         }
     }
