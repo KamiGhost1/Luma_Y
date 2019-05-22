@@ -94,7 +94,7 @@ void chgLuma(COLOR **image,float **Y, int height, int width){
         for(j=0;j<width;j++){
             Y[i][j] = (cR*image[i][j].R + cG*image[i][j].G + cB*image[i][j].B)/255;
             Y[i][j] += changeKoef;;
-            image[i][j].R *= Y[i][j];
+            image[i][j].R *= Y[i][j]; // +luma /=; -luma *= 
             image[i][j].B *= Y[i][j];
             image[i][j].G *= Y[i][j];
             #ifdef debugL
