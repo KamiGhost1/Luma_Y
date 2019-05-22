@@ -90,15 +90,13 @@ float **crtLuma(int height, int width){
 
 void chgLuma(COLOR **image,float **Y, int height, int width){
     int i,j;
-    COLOR image2;
     for(i=0;i<height;i++)
         for(j=0;j<width;j++){
             Y[i][j] = (cR*image[i][j].R + cG*image[i][j].G + cB*image[i][j].B)/255;
-            Y[i][j] += changeKoef;
-            image2 = image[i][j];
-            image[i][j].R = image2.R*Y[i][j];
-            image[i][j].B = image2.B*Y[i][j];
-            image[i][j].G = image2.G*Y[i][j];
+            Y[i][j] += changeKoef;;
+            image[i][j].R *= Y[i][j];
+            image[i][j].B *= Y[i][j];
+            image[i][j].G *= Y[i][j];
             #ifdef debugL
             printf("%.3f\n",Y[i][j]);
             #endif
